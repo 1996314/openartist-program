@@ -535,9 +535,10 @@ export default function OpenArtistLanding() {
 
             <div style={{ marginTop: "2.5rem" }}>
               <a
-                href="#"
+                href="https://forms.openart.ai/openartist-program"
                 className="apply-btn"
-                onClick={(e) => e.preventDefault()}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Apply Now
               </a>
