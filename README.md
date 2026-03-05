@@ -2,6 +2,8 @@
 
 The official landing page for **The OpenArtist Program**, OpenArt's invitation-only, paid creator partnership for AI content creators.
 
+https://openartist-landing-page.vercel.app/
+
 Built with a Renaissance atelier-inspired visual identity — oil painting textures, dramatic lighting, and a prestige-first design language that reflects the selectivity of the program itself.
 
 ## Features
