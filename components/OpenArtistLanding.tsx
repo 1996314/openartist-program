@@ -283,6 +283,24 @@ export default function OpenArtistLanding() {
           background: linear-gradient(90deg, transparent, ${C.gold}, transparent);
         }
 
+        .criteria-card {
+          background: ${C.black}aa;
+          border: 1px solid ${C.umber}25;
+          border-radius: 12px;
+          padding: 2rem;
+          height: 100%;
+          box-sizing: border-box;
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        .criteria-card:hover {
+          border-color: ${C.gold}55;
+          transform: translateY(-4px);
+          box-shadow: 0 20px 50px ${C.black}80;
+          background: ${C.black}cc;
+        }
+
         .apply-btn {
           display: inline-block;
           position: relative;
@@ -462,7 +480,7 @@ export default function OpenArtistLanding() {
                 fontWeight: 500,
               }}
             >
-              Invitation Only
+              Applications Open
             </p>
 
             <h1
@@ -607,11 +625,7 @@ export default function OpenArtistLanding() {
                   fontWeight: 400,
                 }}
               >
-                We don&apos;t find OpenArtists.
-                <br />
-                <span style={{ color: C.gold }}>
-                  We recognize them.
-                </span>
+                OpenArtist is OpenArt&apos;s official creator title, awarded to a curated global roster of 150 creators setting the standard for AI-generated content.
               </p>
             </Reveal>
 
@@ -628,28 +642,7 @@ export default function OpenArtistLanding() {
                   fontWeight: 300,
                 }}
               >
-                The OpenArtist Program is a hand-selected group of
-                creators who represent the future of AI-generated
-                content. You&apos;ll get early access to every model
-                on OpenArt before the public sees it. A direct line to
-                our team. Your work amplified when it performs. And
-                compensation for every post you create.
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.35}>
-              <p
-                style={{
-                  fontSize: "clamp(15px, 1.6vw, 17px)",
-                  lineHeight: 1.9,
-                  color: `${C.ivory}bb`,
-                  fontWeight: 300,
-                  marginTop: "1.5rem",
-                  fontFamily: "'Playfair Display', serif",
-                  fontStyle: "italic",
-                }}
-              >
-                This is not a brand deal. This is a membership.
+                Members get early access to every OpenArt model before it reaches the public, a direct line to our team, and amplification across OpenArt channels when their work performs. OpenArtists are paid for every post they publish, with additional bonuses when their content breaks through.
               </p>
             </Reveal>
           </div>
@@ -851,44 +844,27 @@ export default function OpenArtistLanding() {
                     Select
                   </span>
 
-                  <h3
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontSize: 32,
-                      fontWeight: 400,
-                      margin: "1.5rem 0 0.5rem",
-                    }}
-                  >
-                    $50
-                    <span
-                      style={{
-                        fontSize: 16,
-                        color: `${C.ivory}66`,
-                        fontFamily: "'Inter', sans-serif",
-                        fontWeight: 300,
-                      }}
-                    >
-                      /post
-                    </span>
-                  </h3>
                   <p
                     style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       color: `${C.ivory}88`,
+                      marginTop: "1.5rem",
                       marginBottom: "2rem",
                       fontWeight: 300,
+                      fontStyle: "italic",
                     }}
                   >
-                    + $50 performance bonus per post
+                    Your entry into the OpenArtist roster
                   </p>
 
                   {[
+                    "Paid per post",
+                    "Monthly OpenArt credits included",
                     "2–3 posts per month",
                     "Early model access",
-                    "Pro account included",
-                    "Creative freedom on every brief",
+                    "OpenArt Pro account included",
                     "OpenArtist badge",
-                    "Path to Signature at 90 days",
+                    "Path to Signature after 30-60 days",
                   ].map((item, i) => (
                     <div
                       key={i}
@@ -937,44 +913,27 @@ export default function OpenArtistLanding() {
                     Signature
                   </span>
 
-                  <h3
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontSize: 32,
-                      fontWeight: 400,
-                      margin: "1.5rem 0 0.5rem",
-                    }}
-                  >
-                    $100
-                    <span
-                      style={{
-                        fontSize: 16,
-                        color: `${C.ivory}66`,
-                        fontFamily: "'Inter', sans-serif",
-                        fontWeight: 300,
-                      }}
-                    >
-                      /post
-                    </span>
-                  </h3>
                   <p
                     style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       color: `${C.ivory}88`,
+                      marginTop: "1.5rem",
                       marginBottom: "2rem",
                       fontWeight: 300,
+                      fontStyle: "italic",
                     }}
                   >
-                    + $50 performance bonus per post
+                    OpenArt&apos;s highest creator distinction
                   </p>
 
                   {[
+                    "Higher pay per post",
+                    "Increased monthly OpenArt credits",
                     "2–3 posts per month",
                     "First access to every model drop",
                     "Direct Slack with the team",
-                    "Quarterly roadmap input",
-                    "Featured on OpenArt's channels",
-                    "Campaign lead opportunities",
+                    "Quarterly product roadmap input",
+                    "Featured on OpenArt channels",
                   ].map((item, i) => (
                     <div
                       key={i}
@@ -999,21 +958,6 @@ export default function OpenArtistLanding() {
               </Reveal>
             </div>
 
-            <Reveal delay={0.3}>
-              <p
-                style={{
-                  textAlign: "center",
-                  fontSize: 13,
-                  color: `${C.ivory}66`,
-                  marginTop: "2rem",
-                  fontStyle: "italic",
-                  fontFamily: "'Playfair Display', serif",
-                }}
-              >
-                Performance thresholds: 250K views (IG) or 50K
-                impressions (X)
-              </p>
-            </Reveal>
           </div>
         </section>
 
@@ -1043,24 +987,8 @@ export default function OpenArtistLanding() {
                   marginBottom: "1rem",
                 }}
               >
-                Who we&apos;re looking for
+                Who becomes an OpenArtist
               </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p
-                style={{
-                  textAlign: "center",
-                  color: `${C.ivory}99`,
-                  fontSize: 15,
-                  fontWeight: 300,
-                  lineHeight: 1.7,
-                  maxWidth: 560,
-                  margin: "0 auto 3rem",
-                }}
-              >
-                We select based on the quality and consistency of your work, not
-                your follower count. Here&apos;s what matters.
-              </p>
             </Reveal>
 
             {/* Three cards */}
@@ -1074,46 +1002,34 @@ export default function OpenArtistLanding() {
             >
               {[
                 {
-                  icon: "📡",
-                  title: "Audience & Reach",
-                  bullets: [
-                    "5,000+ engaged followers on at least one major platform",
-                    "Or a highly engaged creative audience through a newsletter, Discord, or client base",
-                    "Consistent reach, not one-off viral spikes. We look at your last 30 days.",
-                  ],
-                },
-                {
                   icon: "🎨",
                   title: "Active Creation",
                   bullets: [
-                    "Actively creating AI-generated content, on any tool or platform, as part of your regular workflow",
-                    "Share 2–3 pieces of AI content per month: finished work, process breakdowns, experiments, or reactions",
-                    "You don't need to be using OpenArt already. You need to be making things with AI consistently.",
+                    "Actively creating AI-generated content using OpenArt",
+                    "Share 2–3 pieces of content per month with your audience",
+                    "Content can include finished work, process breakdowns, experiments, or reactions",
                   ],
                 },
                 {
                   icon: "✦",
                   title: "Quality & Voice",
                   bullets: [
-                    "Your content has a clear point of view. Tutorials, demos, reactions, commentary, any format, but it has to be yours.",
-                    "High production value isn't required. Strong hooks, genuine reactions, and useful outputs are.",
-                    "Willing to include clear attribution when posting OpenArt content.",
+                    "Your content has a clear point of view and creative voice",
+                    "Tutorials, demos, reactions, commentary, any format, but it has to be yours",
+                    "Share your work publicly and tag OpenArt so we can amplify it",
+                  ],
+                },
+                {
+                  icon: "📡",
+                  title: "Audience & Reach",
+                  bullets: [
+                    "Highly engaged creative audience on at least one major social platform",
+                    "Consistent reach, not one-off spikes",
                   ],
                 },
               ].map((card, ci) => (
                 <Reveal key={ci} delay={ci * 0.1 + 0.15}>
-                  <div
-                    style={{
-                      background: `${C.black}aa`,
-                      border: `1px solid ${C.umber}25`,
-                      borderRadius: 12,
-                      backdropFilter: "blur(16px)",
-                      WebkitBackdropFilter: "blur(16px)",
-                      padding: "2rem",
-                      height: "100%",
-                      boxSizing: "border-box",
-                    }}
-                  >
+                  <div className="criteria-card">
                     <div style={{ fontSize: 24, marginBottom: "1rem" }}>
                       {card.icon}
                     </div>
@@ -1166,209 +1082,8 @@ export default function OpenArtistLanding() {
               ))}
             </div>
 
-            {/* Platform benchmarks */}
-            <Reveal delay={0.4}>
-              <div
-                style={{
-                  background: `${C.black}aa`,
-                  border: `1px solid ${C.umber}25`,
-                  borderRadius: 12,
-                  padding: "2rem",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: 11,
-                    letterSpacing: 3,
-                    textTransform: "uppercase",
-                    color: C.gold,
-                    marginBottom: "1.5rem",
-                  }}
-                >
-                  Platform benchmarks
-                </p>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-                    gap: "1.5rem",
-                    marginBottom: "1.5rem",
-                  }}
-                >
-                  {[
-                    {
-                      platform: "Instagram",
-                      metric: "30K–50K median Reel views",
-                      logo: (
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <rect x="2" y="2" width="20" height="20" rx="5"/>
-                          <circle cx="12" cy="12" r="4"/>
-                          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-                        </svg>
-                      ),
-                    },
-                    {
-                      platform: "X (Twitter)",
-                      metric: "15–25K median impressions per thread",
-                      logo: (
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.256 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                      ),
-                    },
-                    {
-                      platform: "YouTube Shorts",
-                      metric: "25K–30K median views",
-                      logo: (
-                        <svg width="16" height="12" viewBox="0 0 24 17" fill="currentColor">
-                          <path d="M23.5 2.7S23.2.7 22.3 0C21.2-1.2 19.9-1.2 19.3-1.1 16.7-.1 12 0 12 0S7.3-.1 4.7.4c-.6.1-1.9.1-3 1.2C.8.4.5 2.4.5 2.4S.2 4.8.2 7.2v2.2c0 2.4.3 4.8.3 4.8s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2 2.4.2 10 .3 10 .3s4.7 0 7.3-.4c.6-.1 1.9-.1 3-1.2.9-.8 1.2-2.8 1.2-2.8s.3-2.4.3-4.8V7.2c0-2.4-.3-4.5-.3-4.5z" opacity=".9"/>
-                          <path d="M9.6 12.2V5l6.6 3.6-6.6 3.6z" fill="white"/>
-                        </svg>
-                      ),
-                    },
-                    {
-                      platform: "LinkedIn",
-                      metric: "50–100 avg likes per post",
-                      logo: (
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                      ),
-                    },
-                  ].map((b, i) => (
-                    <div key={i}>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 6,
-                          color: `${C.ivory}66`,
-                          marginBottom: 4,
-                        }}
-                      >
-                        {b.logo}
-                        <p style={{ fontSize: 12, fontWeight: 300 }}>{b.platform}</p>
-                      </div>
-                      <p style={{ fontSize: 15, color: C.ivory, fontWeight: 500 }}>
-                        {b.metric}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <p
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontStyle: "italic",
-                    fontSize: 13,
-                    color: `${C.ivory}66`,
-                    lineHeight: 1.6,
-                  }}
-                >
-                  &ldquo;These are entry benchmarks, not hard cutoffs. Exceptional
-                  content with a smaller audience is always considered.&rdquo;
-                </p>
-              </div>
-            </Reveal>
           </div>
         </section>
-
-        {/* ════════════════════ CLOSING CTA ════════════════════ */}
-        <section
-          style={{
-            minHeight: "80vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "6rem 2rem",
-            textAlign: "center",
-          }}
-        >
-          <div style={{ maxWidth: 600 }}>
-            <Reveal>
-              <div
-                style={{
-                  position: "relative",
-                  marginBottom: "2rem",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: 80,
-                    lineHeight: 1,
-                    color: `${C.gold}30`,
-                    position: "absolute",
-                    top: -10,
-                    left: 0,
-                  }}
-                >
-                  &ldquo;
-                </span>
-                <p
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontStyle: "italic",
-                    fontSize: "clamp(22px, 3.5vw, 34px)",
-                    lineHeight: 1.5,
-                    color: C.ivory,
-                    paddingLeft: 20,
-                  }}
-                >
-                  The best seat at the table in AI content right now
-                  is available to a very small number of people.
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.15}>
-              <p
-                style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(18px, 2.5vw, 24px)",
-                  color: C.gold,
-                  marginBottom: "3rem",
-                  fontStyle: "italic",
-                }}
-              >
-                You have one of them.
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.25}>
-              <GoldLine />
-              <p
-                style={{
-                  fontSize: 11,
-                  letterSpacing: 4,
-                  textTransform: "uppercase",
-                  color: `${C.ivory}55`,
-                  marginTop: "2rem",
-                  marginBottom: "2rem",
-                }}
-              >
-                Invitation only. Always.
-              </p>
-            </Reveal>
-
-          </div>
-        </section>
-
-        {/* ── Portal transition into FAQ ── */}
-        <div style={{ height: 120, overflow: "hidden", position: "relative" }}>
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: "-5%",
-              right: "-5%",
-              height: "100%",
-              background: "#141211",
-              borderRadius: "60px 60px 0 0",
-            }}
-          />
-        </div>
 
         {/* ════════════════════ FAQ ════════════════════ */}
         <div ref={faqRef} style={{ background: "#141211", position: "relative" }}>
@@ -1408,15 +1123,11 @@ export default function OpenArtistLanding() {
                 },
                 {
                   q: "Who is eligible?",
-                  a: "We're looking for creators who are actively producing AI-generated content and have a consistent, engaged audience. The baseline is 5,000+ followers on a major platform, but we weight engagement quality and content consistency over raw follower count. You don't need to be using OpenArt already.",
+                  a: "We're looking for creators who are actively producing AI-generated content and have a consistent, engaged audience.",
                 },
                 {
                   q: "How does selection work?",
-                  a: "The program is invitation-only. We source from our internal watchlist, referrals from existing OpenArtists, and our broader creator community. We evaluate based on content quality, posting consistency, audience engagement, and how well your voice fits the AI creative space. There is no open application form.",
-                },
-                {
-                  q: "How much do OpenArtists get paid?",
-                  a: "Select tier creators earn $50 per post with a $50 bonus when a post exceeds performance thresholds (250K views on Instagram or 50K impressions on X). Signature tier creators earn $100 per post with the same bonus structure. All OpenArtists also receive a free Pro account on OpenArt.",
+                  a: "We source from our internal watchlist, referrals from existing OpenArtists, and our broader creator community. We evaluate based on content quality, posting consistency, audience engagement, and how well your voice fits the AI creative space. There are limited seats that open periodically. Applications are open now.",
                 },
                 {
                   q: "Do I need to use OpenArt exclusively?",
@@ -1432,7 +1143,7 @@ export default function OpenArtistLanding() {
                 },
                 {
                   q: "Can I apply if I haven't been invited?",
-                  a: "The program launches with a curated invite list. After the initial cohort is established, we may open a limited application window for creators in our broader community who meet the criteria. If you're creating strong AI content, the best way to get noticed is to keep creating. We're always watching.",
+                  a: "The program launched with a curated invite list. We periodically open a limited application window for creators producing strong AI content. If that's you, apply now to be considered for the next cohort.",
                 },
               ].map((item, i) => (
                 <FaqItem key={i} q={item.q} a={item.a} />
