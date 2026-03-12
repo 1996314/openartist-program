@@ -1041,7 +1041,7 @@ export default function OpenArtistLanding() {
               {[
                 {
                   icon: "📡",
-                  img: "https://cdn.openart.ai/assets/internal/uploads/image_w5zxs_iH_1008x1008_1771458827919.webp",
+                  img: "/criteria/audience_reach.webp",
                   title: "Audience & Reach",
                   bullets: [
                     "5000+ followers on at least one major platform",
@@ -1051,7 +1051,7 @@ export default function OpenArtistLanding() {
                 },
                 {
                   icon: "🎨",
-                  img: "https://cdn.openart.ai/assets/internal/uploads/image_GfcFA9_m_1008x1008_1771461069379.webp",
+                  img: "/criteria/active_creation.webp",
                   title: "Active Creation",
                   bullets: [
                     "Actively creating AI-generated content using OpenArt",
@@ -1061,7 +1061,7 @@ export default function OpenArtistLanding() {
                 },
                 {
                   icon: "✦",
-                  img: "https://cdn.openart.ai/assets/internal/uploads/image_AXLu8qdr_1008x1008_1771461067470.webp",
+                  img: "/criteria/quality_voice.webp",
                   title: "Quality & Voice",
                   bullets: [
                     "Your content has a clear point of view and creative voice",
