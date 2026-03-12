@@ -109,9 +109,9 @@ function FaqItem({ q, a }: { q: string; a: string }) {
           style={{
             fontFamily: "'Playfair Display', serif",
             fontStyle: "italic",
-            fontSize: "clamp(16px, 2vw, 20px)",
+            fontSize: "clamp(17px, 2vw, 22px)",
             color: C.ivory,
-            fontWeight: 400,
+            fontWeight: 500,
           }}
         >
           {q}
@@ -135,9 +135,9 @@ function FaqItem({ q, a }: { q: string; a: string }) {
           >
             <p
               style={{
-                fontSize: 14,
-                color: `${C.ivory}99`,
-                lineHeight: 1.8,
+                fontSize: 15,
+                color: `${C.ivory}cc`,
+                lineHeight: 1.85,
                 fontWeight: 300,
                 paddingBottom: "1.5rem",
               }}
@@ -284,8 +284,8 @@ export default function OpenArtistLanding() {
         }
 
         .criteria-card {
-          background: ${C.black}aa;
-          border: 1px solid ${C.umber}25;
+          background: ${C.black}cc;
+          border: 1px solid ${C.umber}40;
           border-radius: 12px;
           padding: 2rem;
           height: 100%;
@@ -304,13 +304,13 @@ export default function OpenArtistLanding() {
         .apply-btn {
           display: inline-block;
           position: relative;
-          padding: 22px 72px;
+          padding: 22px 80px;
           font-family: 'Inter', sans-serif;
           font-weight: 500;
-          font-size: 14px;
+          font-size: 15px;
           letter-spacing: 2px;
           text-transform: uppercase;
-          border: 1px solid ${C.umber}55;
+          border: 1px solid ${C.umber}88;
           color: ${C.ivory};
           background: ${C.black}cc;
           backdrop-filter: blur(20px);
@@ -434,6 +434,54 @@ export default function OpenArtistLanding() {
       <Particles globalOpacity={1 - faqProgress} />
       <Particles color={`${C.ivory}44`} globalOpacity={faqProgress} />
 
+      {/* ── NAVBAR ── */}
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 200,
+        height: 60, display: "flex", alignItems: "center",
+        background: "rgba(13,11,10,0.88)", backdropFilter: "blur(12px)",
+        borderBottom: "1px solid rgba(201,168,76,0.12)",
+        padding: "0 32px",
+      }}>
+        <div style={{
+          maxWidth: 1200, margin: "0 auto", width: "100%",
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+        }}>
+          <a href="https://openart.ai" target="_blank" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+            <img src="/logo_2x.webp" alt="OpenArt" style={{ height: 26, width: "auto", display: "block" }} />
+          </a>
+          <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
+            {[
+              { label: "Image Models", href: "https://openart.ai/suite/image" },
+              { label: "Video Models", href: "https://openart.ai/suite/video" },
+              { label: "Blog", href: "https://openart.ai/blog" },
+              { label: "Tutorials", href: "https://openart.ai/suite/tutorials" },
+            ].map(link => (
+              <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
+                style={{ fontSize: 13, color: `${C.ivory}99`, textDecoration: "none", transition: "color 0.2s" }}
+                onMouseEnter={e => (e.currentTarget.style.color = C.ivory)}
+                onMouseLeave={e => (e.currentTarget.style.color = `${C.ivory}99`)}
+              >{link.label}</a>
+            ))}
+          </div>
+          <a href="https://openart.ai/suite" target="_blank" rel="noopener noreferrer" style={{
+            background: C.gold,
+            color: C.black,
+            borderRadius: 999,
+            padding: "7px 18px",
+            fontSize: 13,
+            fontWeight: 600,
+            cursor: "pointer",
+            textDecoration: "none",
+            display: "inline-flex",
+            alignItems: "center",
+            transition: "background 0.2s",
+          }}
+            onMouseEnter={e => (e.currentTarget.style.background = C.amber)}
+            onMouseLeave={e => (e.currentTarget.style.background = C.gold)}
+          >Sign Up for FREE</a>
+        </div>
+      </nav>
+
       {/* ── Scrollable content ── */}
       <div
         ref={containerRef}
@@ -472,11 +520,11 @@ export default function OpenArtistLanding() {
             <p
               style={{
                 fontFamily: "'Inter', sans-serif",
-                fontSize: 12,
+                fontSize: 11,
                 letterSpacing: 4,
                 textTransform: "uppercase",
                 color: C.gold,
-                marginBottom: "2rem",
+                marginBottom: "2.5rem",
                 fontWeight: 500,
               }}
             >
@@ -497,8 +545,8 @@ export default function OpenArtistLanding() {
               <span
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontWeight: 300,
-                  fontSize: "clamp(18px, 3.5vw, 32px)",
+                  fontWeight: 400,
+                  fontSize: "clamp(20px, 3.5vw, 36px)",
                   color: C.ivory,
                   marginBottom: "0.05em",
                 }}
@@ -507,7 +555,7 @@ export default function OpenArtistLanding() {
               </span>
               <span
                 style={{
-                  fontSize: "clamp(48px, 10vw, 100px)",
+                  fontSize: "clamp(60px, 12vw, 120px)",
                   letterSpacing: -2,
                   color: C.ivory,
                   marginBottom: "0.02em",
@@ -523,8 +571,8 @@ export default function OpenArtistLanding() {
               <span
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontWeight: 300,
-                  fontSize: "clamp(24px, 4.5vw, 44px)",
+                  fontWeight: 400,
+                  fontSize: "clamp(28px, 5vw, 52px)",
                   color: C.ivory,
                   alignSelf: "flex-end",
                 }}
@@ -539,9 +587,9 @@ export default function OpenArtistLanding() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontStyle: "italic",
-                fontSize: "clamp(16px, 2.2vw, 22px)",
-                color: `${C.ivory}bb`,
-                maxWidth: 500,
+                fontSize: "clamp(18px, 2.4vw, 26px)",
+                color: `${C.ivory}ee`,
+                maxWidth: 560,
                 margin: "0 auto",
                 lineHeight: 1.6,
               }}
@@ -551,7 +599,7 @@ export default function OpenArtistLanding() {
               A creative standard.
             </p>
 
-            <div style={{ marginTop: "2.5rem" }}>
+            <div style={{ marginTop: "3rem" }}>
               <a
                 href="https://forms.openart.ai/openartist-program"
                 className="apply-btn"
@@ -582,7 +630,7 @@ export default function OpenArtistLanding() {
                 fontSize: 11,
                 letterSpacing: 3,
                 textTransform: "uppercase",
-                color: `${C.ivory}55`,
+                color: `${C.ivory}77`,
               }}
             >
               Scroll
@@ -604,7 +652,7 @@ export default function OpenArtistLanding() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            padding: "6rem 2rem",
+            padding: "8rem 2rem",
           }}
         >
           <div
@@ -619,8 +667,8 @@ export default function OpenArtistLanding() {
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontStyle: "italic",
-                  fontSize: "clamp(24px, 4vw, 42px)",
-                  lineHeight: 1.5,
+                  fontSize: "clamp(28px, 4.5vw, 52px)",
+                  lineHeight: 1.45,
                   color: C.ivory,
                   fontWeight: 400,
                 }}
@@ -636,9 +684,9 @@ export default function OpenArtistLanding() {
             <Reveal delay={0.25}>
               <p
                 style={{
-                  fontSize: "clamp(15px, 1.6vw, 17px)",
-                  lineHeight: 1.9,
-                  color: `${C.ivory}bb`,
+                  fontSize: "clamp(16px, 1.7vw, 18px)",
+                  lineHeight: 1.85,
+                  color: `${C.ivory}dd`,
                   fontWeight: 300,
                 }}
               >
@@ -649,13 +697,13 @@ export default function OpenArtistLanding() {
         </section>
 
         {/* ════════════════════ BENEFITS ════════════════════ */}
-        <section style={{ padding: "6rem 2rem" }}>
+        <section style={{ padding: "8rem 2rem" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <Reveal>
               <h2
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(36px, 6vw, 64px)",
+                  fontSize: "clamp(40px, 6vw, 72px)",
                   fontWeight: 400,
                   textAlign: "center",
                   marginBottom: "3rem",
@@ -716,10 +764,10 @@ export default function OpenArtistLanding() {
                     }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
                     style={{
-                      background: "rgba(255,255,255,0.05)",
+                      background: "rgba(255,255,255,0.07)",
                       backdropFilter: "blur(20px)",
                       WebkitBackdropFilter: "blur(20px)",
-                      border: "1px solid rgba(255,255,255,0.08)",
+                      border: "1px solid rgba(255,255,255,0.12)",
                       borderRadius: 16,
                       padding: "1.75rem",
                       display: "flex",
@@ -731,14 +779,14 @@ export default function OpenArtistLanding() {
                   >
                     <div
                       style={{
-                        width: 36,
-                        height: 36,
+                        width: 40,
+                        height: 40,
                         borderRadius: 10,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         flexShrink: 0,
-                        fontSize: 16,
+                        fontSize: 18,
                         background: `${C.umber}25`,
                       }}
                     >
@@ -747,9 +795,9 @@ export default function OpenArtistLanding() {
                     <div>
                       <p
                         style={{
-                          fontWeight: 500,
-                          fontSize: 15,
-                          marginBottom: 4,
+                          fontWeight: 600,
+                          fontSize: 16,
+                          marginBottom: 6,
                           color: C.ivory,
                         }}
                       >
@@ -757,8 +805,8 @@ export default function OpenArtistLanding() {
                       </p>
                       <p
                         style={{
-                          fontSize: 13,
-                          color: `${C.ivory}88`,
+                          fontSize: 14,
+                          color: `${C.ivory}aa`,
                           lineHeight: 1.6,
                           fontWeight: 300,
                         }}
@@ -774,7 +822,7 @@ export default function OpenArtistLanding() {
         </section>
 
         {/* ════════════════════ TIERS ════════════════════ */}
-        <section style={{ padding: "6rem 2rem" }}>
+        <section style={{ padding: "8rem 2rem" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <Reveal>
               <p
@@ -792,7 +840,7 @@ export default function OpenArtistLanding() {
               <h2
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(28px, 4vw, 40px)",
+                  fontSize: "clamp(32px, 4.5vw, 52px)",
                   fontWeight: 400,
                   textAlign: "center",
                   marginBottom: "3rem",
@@ -833,8 +881,8 @@ export default function OpenArtistLanding() {
 
                   <p
                     style={{
-                      fontSize: 14,
-                      color: `${C.ivory}88`,
+                      fontSize: 15,
+                      color: `${C.ivory}bb`,
                       marginTop: "1.5rem",
                       marginBottom: "2rem",
                       fontWeight: 300,
@@ -859,8 +907,8 @@ export default function OpenArtistLanding() {
                       style={{
                         padding: "10px 0",
                         borderBottom: `1px solid ${C.umber}15`,
-                        fontSize: 14,
-                        color: `${C.ivory}bb`,
+                        fontSize: 15,
+                        color: `${C.ivory}dd`,
                         fontWeight: 300,
                         display: "flex",
                         alignItems: "center",
@@ -903,8 +951,8 @@ export default function OpenArtistLanding() {
 
                   <p
                     style={{
-                      fontSize: 14,
-                      color: `${C.ivory}88`,
+                      fontSize: 15,
+                      color: `${C.ivory}bb`,
                       marginTop: "1.5rem",
                       marginBottom: "2rem",
                       fontWeight: 300,
@@ -930,8 +978,8 @@ export default function OpenArtistLanding() {
                       style={{
                         padding: "10px 0",
                         borderBottom: `1px solid ${C.umber}15`,
-                        fontSize: 14,
-                        color: `${C.ivory}bb`,
+                        fontSize: 15,
+                        color: `${C.ivory}dd`,
                         fontWeight: 300,
                         display: "flex",
                         alignItems: "center",
@@ -952,7 +1000,7 @@ export default function OpenArtistLanding() {
         </section>
 
         {/* ════════════════════ WHO WE'RE LOOKING FOR ════════════════════ */}
-        <section style={{ padding: "6rem 2rem" }}>
+        <section style={{ padding: "8rem 2rem" }}>
           <div style={{ maxWidth: 1000, margin: "0 auto" }}>
             <Reveal>
               <p
@@ -970,7 +1018,7 @@ export default function OpenArtistLanding() {
               <h2
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(28px, 4vw, 40px)",
+                  fontSize: "clamp(32px, 4.5vw, 52px)",
                   fontWeight: 400,
                   textAlign: "center",
                   fontStyle: "italic",
@@ -1029,7 +1077,7 @@ export default function OpenArtistLanding() {
                       style={{
                         fontFamily: "'Playfair Display', serif",
                         fontStyle: "italic",
-                        fontSize: 20,
+                        fontSize: 22,
                         fontWeight: 400,
                         color: C.ivory,
                         marginBottom: "1.25rem",
@@ -1059,8 +1107,8 @@ export default function OpenArtistLanding() {
                         </span>
                         <p
                           style={{
-                            fontSize: 13,
-                            color: `${C.ivory}99`,
+                            fontSize: 14,
+                            color: `${C.ivory}cc`,
                             lineHeight: 1.6,
                             fontWeight: 300,
                           }}
@@ -1097,7 +1145,7 @@ export default function OpenArtistLanding() {
                 <h2
                   style={{
                     fontFamily: "'Playfair Display', serif",
-                    fontSize: "clamp(28px, 4vw, 40px)",
+                    fontSize: "clamp(32px, 4.5vw, 52px)",
                     fontWeight: 400,
                     textAlign: "center",
                     fontStyle: "italic",
@@ -1142,44 +1190,67 @@ export default function OpenArtistLanding() {
               ))}
 
               {/* Footer */}
-              <footer
-                style={{
-                  marginTop: "4rem",
-                  paddingTop: "2rem",
-                  borderTop: `1px solid ${C.ivory}15`,
-                  textAlign: "center",
-                }}
-              >
-                <div style={{ marginBottom: "1rem" }}>
-                  <p
-                    style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontSize: "clamp(13px, 1.8vw, 16px)",
-                      color: `${C.ivory}33`,
-                      fontStyle: "italic",
-                      marginBottom: "1rem",
-                    }}
-                  >
-                    — The OpenArt Team
-                  </p>
-                  <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
-                    <path
-                      d="M8 4C4 4 0 8 0 12s4 8 8 8c2 0 4-1 5.5-2.5L20 12l-6.5-5.5C12 5 10 4 8 4z"
-                      stroke={`${C.ivory}33`}
-                      strokeWidth="2"
-                      fill="none"
-                    />
-                    <path
-                      d="M32 4c4 0 8 4 8 8s-4 8-8 8c-2 0-4-1-5.5-2.5L20 12l6.5-5.5C28 5 30 4 32 4z"
-                      stroke={`${C.ivory}33`}
-                      strokeWidth="2"
-                      fill="none"
-                    />
-                  </svg>
+              <footer style={{
+                marginTop: "5rem",
+                paddingTop: "3rem",
+                borderTop: `1px solid ${C.gold}20`,
+              }}>
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "1.5fr 1fr 1fr 1fr 1fr",
+                  gap: 40,
+                  marginBottom: 48,
+                  textAlign: "left",
+                }}>
+                  <div>
+                    <a href="https://openart.ai" target="_blank" style={{ textDecoration: "none" }}>
+                      <img src="/logo_2x.webp" alt="OpenArt" style={{ height: 26, width: "auto", marginBottom: 16, filter: "brightness(0.9) sepia(0.2)" }} />
+                    </a>
+                    <p style={{ fontSize: 13, color: `${C.ivory}55`, lineHeight: 1.7, maxWidth: 200, fontStyle: "italic" }}>
+                      Create better AI art & videos with OpenArt.
+                    </p>
+                  </div>
+                  {[
+                    { title: "Product", links: [
+                      { label: "Home", href: "https://openart.ai" },
+                      { label: "Create", href: "https://openart.ai/suite/home" },
+                      { label: "Edit", href: "https://openart.ai/suite/edit-image" },
+                      { label: "Discover", href: "https://openart.ai/discovery" },
+                      { label: "Train model", href: "https://openart.ai/suite/character" },
+                    ]},
+                    { title: "AI Tools", links: [
+                      { label: "AI Image Generator", href: "https://openart.ai/suite/image" },
+                      { label: "Image to Video", href: "https://openart.ai/suite/video" },
+                      { label: "Consistent Character", href: "https://openart.ai/suite/character" },
+                      { label: "Skin Enhancer", href: "https://openart.ai/m/vellum-ai-skin-enhancer" },
+                    ]},
+                    { title: "Resources", links: [
+                      { label: "Terms of Service", href: "https://openart.ai/terms" },
+                      { label: "Blog", href: "https://openart.ai/blog" },
+                      { label: "Creative Partner", href: "https://openart.ai/programs/cpp" },
+                    ]},
+                    { title: "Need Help?", links: [
+                      { label: "Email us", href: "mailto:support@openart.ai" },
+                      { label: "Discord", href: "https://discord.com/invite/openart-ai-1009536403555750018" },
+                      { label: "FAQ", href: "https://openart.ai/general_faq" },
+                    ]},
+                  ].map(col => (
+                    <div key={col.title}>
+                      <p style={{ fontSize: 11, fontWeight: 600, color: `${C.gold}cc`, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16 }}>{col.title}</p>
+                      {col.links.map(l => (
+                        <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer" style={{ display: "block", fontSize: 13, color: `${C.ivory}66`, textDecoration: "none", marginBottom: 10, transition: "color 0.2s" }}
+                          onMouseEnter={e => (e.currentTarget.style.color = C.ivory)}
+                          onMouseLeave={e => (e.currentTarget.style.color = `${C.ivory}66`)}
+                        >{l.label}</a>
+                      ))}
+                    </div>
+                  ))}
                 </div>
-                <p style={{ fontSize: 12, color: `${C.ivory}33`, fontWeight: 300 }}>
-                  © 2025 OpenArt. The OpenArtist Program.
-                </p>
+                <div style={{ borderTop: `1px solid ${C.gold}15`, paddingTop: 20, textAlign: "center" }}>
+                  <p style={{ fontSize: 12, color: `${C.ivory}40`, fontStyle: "italic" }}>
+                    © {new Date().getFullYear()} OpenArt. The OpenArtist Program.
+                  </p>
+                </div>
               </footer>
             </div>
           </section>
