@@ -1119,6 +1119,7 @@ export default function OpenArtistLanding() {
                             color: `${C.ivory}cc`,
                             lineHeight: 1.6,
                             fontWeight: 300,
+                            margin: 0,
                           }}
                         >
                           {b}
