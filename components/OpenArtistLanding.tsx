@@ -343,6 +343,40 @@ export default function OpenArtistLanding() {
           box-shadow: 0 20px 60px ${C.black}80, 0 0 0 1px ${C.gold}20;
           background: ${C.black}ee;
         }
+
+        /* ── Mobile responsive: Navbar ── */
+        @media (max-width: 768px) {
+          .nav-links {
+            display: none !important;
+          }
+          .nav-inner {
+            padding: 0 !important;
+          }
+          .nav-cta {
+            font-size: 12px !important;
+            padding: 6px 14px !important;
+          }
+        }
+
+        /* ── Mobile responsive: Footer ── */
+        @media (max-width: 768px) {
+          .site-footer {
+            padding: 2rem 20px 1.5rem !important;
+          }
+          .footer-grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 28px !important;
+          }
+          .footer-grid > div:first-child {
+            grid-column: 1 / -1;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .footer-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
       `}</style>
 
       {/* ── Fixed background layers (single compositing container) ── */}
@@ -442,14 +476,14 @@ export default function OpenArtistLanding() {
         borderBottom: "1px solid rgba(201,168,76,0.12)",
         padding: "0 32px",
       }}>
-        <div style={{
+        <div className="nav-inner" style={{
           maxWidth: 1200, margin: "0 auto", width: "100%",
           display: "flex", alignItems: "center", justifyContent: "space-between",
         }}>
           <a href="https://openart.ai" target="_blank" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
             <img src="/logo_2x.webp" alt="OpenArt" style={{ height: 26, width: "auto", display: "block" }} />
           </a>
-          <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
+          <div className="nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
             {[
               { label: "About", href: "#about" },
               { label: "Benefits", href: "#benefits" },
@@ -463,7 +497,7 @@ export default function OpenArtistLanding() {
               >{link.label}</a>
             ))}
           </div>
-          <a href="https://forms.openart.ai/openartist-program" target="_blank" rel="noopener noreferrer" style={{
+          <a href="https://forms.openart.ai/openartist-program" target="_blank" rel="noopener noreferrer" className="nav-cta" style={{
             background: C.gold,
             color: C.black,
             borderRadius: 999,
@@ -1202,7 +1236,7 @@ export default function OpenArtistLanding() {
           </section>
         </div>
       {/* ── FOOTER ── */}
-      <footer style={{
+      <footer className="site-footer" style={{
         background: "rgba(13,11,10,0.95)",
         borderTop: `1px solid ${C.gold}20`,
         padding: "3rem 32px 2rem",
@@ -1210,7 +1244,7 @@ export default function OpenArtistLanding() {
         zIndex: 10,
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{
+          <div className="footer-grid" style={{
             display: "grid",
             gridTemplateColumns: "1.5fr 1fr 1fr 1fr 1fr",
             gap: 40,
