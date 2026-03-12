@@ -697,7 +697,7 @@ export default function OpenArtistLanding() {
         </section>
 
         {/* ════════════════════ BENEFITS ════════════════════ */}
-        <section id="benefits" style={{ padding: "8rem 2rem" }}>
+        <section id="benefits" style={{ padding: "8rem 2rem", background: "rgba(10,8,7,0.82)", backdropFilter: "blur(8px)" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <Reveal>
               <h2
@@ -758,16 +758,16 @@ export default function OpenArtistLanding() {
                   <motion.div
                     whileHover={{
                       y: -4,
-                      backgroundColor: "rgba(255,255,255,0.09)",
-                      borderColor: "rgba(255,255,255,0.18)",
+                      backgroundColor: "rgba(255,255,255,0.08)",
+                      borderColor: `${C.gold}60`,
                       boxShadow: "0 20px 40px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.1)",
                     }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
                     style={{
-                      background: "rgba(255,255,255,0.07)",
+                      background: "rgba(255,255,255,0.05)",
                       backdropFilter: "blur(20px)",
                       WebkitBackdropFilter: "blur(20px)",
-                      border: "1px solid rgba(255,255,255,0.12)",
+                      border: `1px solid ${C.gold}30`,
                       borderRadius: 16,
                       padding: "1.75rem",
                       display: "flex",
