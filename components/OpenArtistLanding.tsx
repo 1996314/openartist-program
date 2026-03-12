@@ -457,7 +457,7 @@ export default function OpenArtistLanding() {
               { label: "FAQ", href: "#faq" },
             ].map(link => (
               <a key={link.label} href={link.href}
-                style={{ fontSize: 13, color: `${C.ivory}99`, textDecoration: "none", transition: "color 0.2s" }}
+                style={{ fontSize: 13, color: `${C.ivory}99`, textDecoration: "none", transition: "color 0.2s", textTransform: "uppercase" as const, letterSpacing: "0.08em" }}
                 onMouseEnter={e => (e.currentTarget.style.color = C.ivory)}
                 onMouseLeave={e => (e.currentTarget.style.color = `${C.ivory}99`)}
               >{link.label}</a>
@@ -1041,6 +1041,7 @@ export default function OpenArtistLanding() {
               {[
                 {
                   icon: "📡",
+                  img: "https://cdn.openart.ai/assets/internal/uploads/image_w5zxs_iH_1008x1008_1771458827919.webp",
                   title: "Audience & Reach",
                   bullets: [
                     "5000+ followers on at least one major platform",
@@ -1050,6 +1051,7 @@ export default function OpenArtistLanding() {
                 },
                 {
                   icon: "🎨",
+                  img: "https://cdn.openart.ai/assets/internal/uploads/image_GfcFA9_m_1008x1008_1771461069379.webp",
                   title: "Active Creation",
                   bullets: [
                     "Actively creating AI-generated content using OpenArt",
@@ -1059,6 +1061,7 @@ export default function OpenArtistLanding() {
                 },
                 {
                   icon: "✦",
+                  img: "https://cdn.openart.ai/assets/internal/uploads/image_AXLu8qdr_1008x1008_1771461067470.webp",
                   title: "Quality & Voice",
                   bullets: [
                     "Your content has a clear point of view and creative voice",
@@ -1069,10 +1072,15 @@ export default function OpenArtistLanding() {
                 
               ].map((card, ci) => (
                 <Reveal key={ci} delay={ci * 0.1 + 0.15}>
-                  <div className="criteria-card">
-                    <div style={{ fontSize: 24, marginBottom: "1rem" }}>
-                      {card.icon}
+                  <div className="criteria-card" style={{ padding: 0, overflow: "hidden" }}>
+                    <div style={{ width: "100%", height: 200, overflow: "hidden", marginBottom: 0 }}>
+                      <img
+                        src={card.img}
+                        alt={card.title}
+                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                      />
                     </div>
+                    <div style={{ padding: "1.5rem" }}>
                     <h3
                       style={{
                         fontFamily: "'Playfair Display', serif",
@@ -1117,6 +1125,7 @@ export default function OpenArtistLanding() {
                         </p>
                       </div>
                     ))}
+                    </div>
                   </div>
                 </Reveal>
               ))}
@@ -1188,74 +1197,77 @@ export default function OpenArtistLanding() {
               ].map((item, i) => (
                 <FaqItem key={i} q={item.q} a={item.a} />
               ))}
-
-              {/* Footer */}
-              <footer style={{
-                marginTop: "5rem",
-                paddingTop: "3rem",
-                borderTop: `1px solid ${C.gold}20`,
-              }}>
-                <div style={{
-                  display: "grid",
-                  gridTemplateColumns: "1.5fr 1fr 1fr 1fr 1fr",
-                  gap: 40,
-                  marginBottom: 48,
-                  textAlign: "left",
-                }}>
-                  <div>
-                    <a href="https://openart.ai" target="_blank" style={{ textDecoration: "none" }}>
-                      <img src="/logo_2x.webp" alt="OpenArt" style={{ height: 26, width: "auto", marginBottom: 16, filter: "brightness(0.9) sepia(0.2)" }} />
-                    </a>
-                    <p style={{ fontSize: 13, color: `${C.ivory}55`, lineHeight: 1.7, maxWidth: 200, fontStyle: "italic" }}>
-                      Create better AI art & videos with OpenArt.
-                    </p>
-                  </div>
-                  {[
-                    { title: "Product", links: [
-                      { label: "Home", href: "https://openart.ai" },
-                      { label: "Create", href: "https://openart.ai/suite/home" },
-                      { label: "Edit", href: "https://openart.ai/suite/edit-image" },
-                      { label: "Discover", href: "https://openart.ai/discovery" },
-                      { label: "Train model", href: "https://openart.ai/suite/character" },
-                    ]},
-                    { title: "AI Tools", links: [
-                      { label: "AI Image Generator", href: "https://openart.ai/suite/image" },
-                      { label: "Image to Video", href: "https://openart.ai/suite/video" },
-                      { label: "Consistent Character", href: "https://openart.ai/suite/character" },
-                      { label: "Skin Enhancer", href: "https://openart.ai/m/vellum-ai-skin-enhancer" },
-                    ]},
-                    { title: "Resources", links: [
-                      { label: "Terms of Service", href: "https://openart.ai/terms" },
-                      { label: "Blog", href: "https://openart.ai/blog" },
-                      { label: "Creative Partner", href: "https://openart.ai/programs/cpp" },
-                    ]},
-                    { title: "Need Help?", links: [
-                      { label: "Email us", href: "mailto:support@openart.ai" },
-                      { label: "Discord", href: "https://discord.com/invite/openart-ai-1009536403555750018" },
-                      { label: "FAQ", href: "https://openart.ai/general_faq" },
-                    ]},
-                  ].map(col => (
-                    <div key={col.title}>
-                      <p style={{ fontSize: 11, fontWeight: 600, color: `${C.gold}cc`, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16 }}>{col.title}</p>
-                      {col.links.map(l => (
-                        <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer" style={{ display: "block", fontSize: 13, color: `${C.ivory}66`, textDecoration: "none", marginBottom: 10, transition: "color 0.2s" }}
-                          onMouseEnter={e => (e.currentTarget.style.color = C.ivory)}
-                          onMouseLeave={e => (e.currentTarget.style.color = `${C.ivory}66`)}
-                        >{l.label}</a>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-                <div style={{ borderTop: `1px solid ${C.gold}15`, paddingTop: 20, textAlign: "center" }}>
-                  <p style={{ fontSize: 12, color: `${C.ivory}40`, fontStyle: "italic" }}>
-                    © {new Date().getFullYear()} OpenArt. The OpenArtist Program.
-                  </p>
-                </div>
-              </footer>
             </div>
           </section>
         </div>
       </div>
+      {/* ── FOOTER ── */}
+      <footer style={{
+        background: "rgba(13,11,10,0.95)",
+        borderTop: `1px solid ${C.gold}20`,
+        padding: "3rem 32px 2rem",
+        position: "relative",
+        zIndex: 10,
+      }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "1.5fr 1fr 1fr 1fr 1fr",
+            gap: 40,
+            marginBottom: 40,
+            textAlign: "left",
+          }}>
+            <div>
+              <a href="https://openart.ai" target="_blank" style={{ textDecoration: "none" }}>
+                <img src="/logo_2x.webp" alt="OpenArt" style={{ height: 26, width: "auto", marginBottom: 16, filter: "brightness(0.9) sepia(0.2)" }} />
+              </a>
+              <p style={{ fontSize: 13, color: `${C.ivory}55`, lineHeight: 1.7, maxWidth: 200, fontStyle: "italic" }}>
+                Create better AI art & videos with OpenArt.
+              </p>
+            </div>
+            {[
+              { title: "Product", links: [
+                { label: "Home", href: "https://openart.ai" },
+                { label: "Create", href: "https://openart.ai/suite/home" },
+                { label: "Edit", href: "https://openart.ai/suite/edit-image" },
+                { label: "Discover", href: "https://openart.ai/discovery" },
+                { label: "Train model", href: "https://openart.ai/suite/character" },
+              ]},
+              { title: "AI Tools", links: [
+                { label: "AI Image Generator", href: "https://openart.ai/suite/image" },
+                { label: "Image to Video", href: "https://openart.ai/suite/video" },
+                { label: "Consistent Character", href: "https://openart.ai/suite/character" },
+                { label: "Skin Enhancer", href: "https://openart.ai/m/vellum-ai-skin-enhancer" },
+              ]},
+              { title: "Resources", links: [
+                { label: "Terms of Service", href: "https://openart.ai/terms" },
+                { label: "Blog", href: "https://openart.ai/blog" },
+                { label: "Creative Partner", href: "https://openart.ai/programs/cpp" },
+              ]},
+              { title: "Need Help?", links: [
+                { label: "Email us", href: "mailto:support@openart.ai" },
+                { label: "Discord", href: "https://discord.com/invite/openart-ai-1009536403555750018" },
+                { label: "FAQ", href: "https://openart.ai/general_faq" },
+              ]},
+            ].map(col => (
+              <div key={col.title}>
+                <p style={{ fontSize: 11, fontWeight: 600, color: `${C.gold}cc`, letterSpacing: "0.1em", textTransform: "uppercase" as const, marginBottom: 16 }}>{col.title}</p>
+                {col.links.map(l => (
+                  <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer" style={{ display: "block", fontSize: 13, color: `${C.ivory}66`, textDecoration: "none", marginBottom: 10, transition: "color 0.2s" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = C.ivory)}
+                    onMouseLeave={e => (e.currentTarget.style.color = `${C.ivory}66`)}
+                  >{l.label}</a>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div style={{ borderTop: `1px solid ${C.gold}15`, paddingTop: 20, textAlign: "center" }}>
+            <p style={{ fontSize: 12, color: `${C.ivory}40`, fontStyle: "italic" }}>
+              © {new Date().getFullYear()} OpenArt. The OpenArtist Program.
+            </p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
