@@ -463,7 +463,7 @@ export default function OpenArtistLanding() {
               >{link.label}</a>
             ))}
           </div>
-          <a href="https://openart.ai/suite" target="_blank" rel="noopener noreferrer" style={{
+          <a href="https://forms.openart.ai/openartist-program" target="_blank" rel="noopener noreferrer" style={{
             background: C.gold,
             color: C.black,
             borderRadius: 999,
@@ -478,7 +478,7 @@ export default function OpenArtistLanding() {
           }}
             onMouseEnter={e => (e.currentTarget.style.background = C.amber)}
             onMouseLeave={e => (e.currentTarget.style.background = C.gold)}
-          >Sign Up for FREE</a>
+          >Apply Now</a>
         </div>
       </nav>
 
