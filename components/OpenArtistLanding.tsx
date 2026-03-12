@@ -451,12 +451,12 @@ export default function OpenArtistLanding() {
           </a>
           <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
             {[
-              { label: "Image Models", href: "https://openart.ai/suite/image" },
-              { label: "Video Models", href: "https://openart.ai/suite/video" },
-              { label: "Blog", href: "https://openart.ai/blog" },
-              { label: "Tutorials", href: "https://openart.ai/suite/tutorials" },
+              { label: "About", href: "#about" },
+              { label: "Benefits", href: "#benefits" },
+              { label: "Tiers", href: "#tiers" },
+              { label: "FAQ", href: "#faq" },
             ].map(link => (
-              <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
+              <a key={link.label} href={link.href}
                 style={{ fontSize: 13, color: `${C.ivory}99`, textDecoration: "none", transition: "color 0.2s" }}
                 onMouseEnter={e => (e.currentTarget.style.color = C.ivory)}
                 onMouseLeave={e => (e.currentTarget.style.color = `${C.ivory}99`)}
@@ -646,7 +646,7 @@ export default function OpenArtistLanding() {
         </section>
 
         {/* ════════════════════ MANIFESTO ════════════════════ */}
-        <section
+        <section id="about"
           style={{
             minHeight: "100vh",
             display: "flex",
@@ -697,7 +697,7 @@ export default function OpenArtistLanding() {
         </section>
 
         {/* ════════════════════ BENEFITS ════════════════════ */}
-        <section style={{ padding: "8rem 2rem" }}>
+        <section id="benefits" style={{ padding: "8rem 2rem" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <Reveal>
               <h2
@@ -822,7 +822,7 @@ export default function OpenArtistLanding() {
         </section>
 
         {/* ════════════════════ TIERS ════════════════════ */}
-        <section style={{ padding: "8rem 2rem" }}>
+        <section id="tiers" style={{ padding: "8rem 2rem" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <Reveal>
               <p
@@ -1127,7 +1127,7 @@ export default function OpenArtistLanding() {
 
         {/* ════════════════════ FAQ ════════════════════ */}
         <div ref={faqRef} style={{ background: "#141211", position: "relative" }}>
-          <section style={{ padding: "6rem 2rem 4rem" }}>
+          <section id="faq" style={{ padding: "6rem 2rem 4rem" }}>
             <div style={{ maxWidth: 680, margin: "0 auto" }}>
               <Reveal>
                 <p
