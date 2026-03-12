@@ -481,7 +481,7 @@ export default function OpenArtistLanding() {
           display: "flex", alignItems: "center", justifyContent: "space-between",
         }}>
           <a href="https://openart.ai" target="_blank" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-            <img src="/logo_2x.webp" alt="OpenArt" style={{ height: 26, width: "auto", display: "block" }} />
+            <img src="/logo_2x.webp" alt="OpenArt" style={{ height: 36, width: "auto", display: "block" }} />
           </a>
           <div className="nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
             {[
@@ -1253,7 +1253,7 @@ export default function OpenArtistLanding() {
           }}>
             <div>
               <a href="https://openart.ai" target="_blank" style={{ textDecoration: "none" }}>
-                <img src="/logo_2x.webp" alt="OpenArt" style={{ height: 26, width: "auto", marginBottom: 16, filter: "brightness(0.9) sepia(0.2)" }} />
+                <img src="/logo_2x.webp" alt="OpenArt" style={{ height: 36, width: "auto", marginBottom: 16, filter: "brightness(0.9) sepia(0.2)" }} />
               </a>
               <p style={{ fontSize: 13, color: `${C.ivory}55`, lineHeight: 1.7, maxWidth: 200, fontStyle: "italic" }}>
                 Create better AI art & videos with OpenArt.
