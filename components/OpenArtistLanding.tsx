@@ -780,13 +780,13 @@ export default function OpenArtistLanding() {
                     <div
                       style={{
                         width: 40,
-                        height: 40,
                         borderRadius: 10,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         flexShrink: 0,
                         fontSize: 18,
+                        marginTop: 10,
                         background: `${C.umber}25`,
                       }}
                     >
@@ -1099,7 +1099,7 @@ export default function OpenArtistLanding() {
                           style={{
                             color: C.gold,
                             fontSize: 8,
-                            marginTop: 6,
+                            marginTop: 7,
                             flexShrink: 0,
                           }}
                         >
