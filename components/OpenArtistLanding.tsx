@@ -1201,7 +1201,6 @@ export default function OpenArtistLanding() {
             </div>
           </section>
         </div>
-      </div>
       {/* ── FOOTER ── */}
       <footer style={{
         background: "rgba(13,11,10,0.95)",
@@ -1269,6 +1268,7 @@ export default function OpenArtistLanding() {
           </div>
         </div>
       </footer>
+      </div>
     </>
   );
 }
